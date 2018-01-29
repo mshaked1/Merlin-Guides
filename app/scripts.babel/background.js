@@ -50,6 +50,7 @@
   // listen to all outgoing requests and add all requests from active tab to array
   function requestListener(reqDetails) {
     if (reqDetails.tabId === activeTabId) {
+      console.log('request started', reqDetails.requestId);
       requests.push({
         id: reqDetails.requestId,
       });
@@ -62,6 +63,7 @@
     if (resDetails.tabId === activeTabId) {
       for (var i = 0; i < requests.length; i++) {
         if (requests[i].id === resDetails.requestId) {
+          console.log('request finished', resDetails.requestId);
           requests.splice(i, 1);
           break;
         }
@@ -89,6 +91,7 @@
   // loop through array of requests and check for any unfinished requests
   // cancel interval and call callback if all requests are complete
   function checkAllRequests(callback, requestArray) {
+    console.log('checking array of requests:', requests);
     var done = true;
     for (var i = 0; i < requestArray.length; i++) {
       if (requestArray.length > 0) {

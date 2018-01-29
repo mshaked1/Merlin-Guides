@@ -3,11 +3,14 @@
 ## To use:
 
 1. Pull repo
-2. Go to chrome://extensions/
-3. Click Load Unpacked Extension, select App folder within repo
-4. Open extension's background page under 'Inspect Views'
-5. Click extension to turn on and reload any tab other than the extensions page
-6. A statement will log in background console once all requests have finished
+2. Run following npm commands
+   1. npm install --global yo gulp-cli bower (ignore any already installed on machine)
+   2. gulp babel
+3. Go to chrome://extensions/
+4. Click Load Unpacked Extension, select App folder within repo
+5. Open extension's background page under 'Inspect Views'
+6. Click extension to turn on and reload any tab other than the extensions page
+7. A statement will log in background console once all requests have finished
 
 ## Solution
 
